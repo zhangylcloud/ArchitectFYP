@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     public Transform charModelTrans;
     public float speed = 6.0f;
-    public float gravity = 0;
+    public float gravity = 9.8f;
     public float facingDirChangeSen = 9.0f;
     public CharacterController charController;
     //public bool isRotationEnabled;
@@ -30,12 +30,17 @@ public class Movement : MonoBehaviour
     {
         SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
         Vector2 moveVec = device.GetAxis();
-        Debug.Log("moveVec is " + moveVec);
+        //Debug.Log("moveVec is " + moveVec);
         Vector3 moveVec3D = new Vector3(moveVec.x, 0, moveVec.y);
         moveVec3D = Vector3.ClampMagnitude(moveVec3D, speed);
-        moveVec3D *= Time.deltaTime;
         moveVec3D = transform.TransformDirection(moveVec3D);
-        moveVec3D.y = 0;
+        Vector3 gravityVec = new Vector3(0, -9.8f, 0);
+        gravityVec = charModelTrans.TransformDirection(gravityVec);
+        Debug.Log("moveVec3D is " + moveVec3D);
+        Debug.Log("gravityVec is " + gravityVec);
+        moveVec3D += gravityVec;
+        Debug.Log("moveVec3D after applying gravity is " + moveVec3D);
+        moveVec3D *= Time.deltaTime;
         charController.Move(moveVec3D);
             //Debug.Log("Yes, Move vec is " + moveVec3D);
         //OVRInput.Update();
