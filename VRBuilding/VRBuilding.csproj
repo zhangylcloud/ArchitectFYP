@@ -90,7 +90,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharCtrlFollow.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Examples\3. PortalDoor\Scripts\PortalEntry.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Examples\4. Callbacks\Scripts\IlluminationController.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Examples\6. RuntimeCreation\Scripts\CreateStereoRenderer.cs" />
@@ -100,6 +99,7 @@
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\DeviceType.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderer.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderManager.cs" />
+    <Compile Include="Assets\Scripts\CharCtrlFollow.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Portal\CollNTele.cs" />
