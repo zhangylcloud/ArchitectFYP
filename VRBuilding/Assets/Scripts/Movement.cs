@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float gravity = 9.8f;
     public float facingDirChangeSen = 9.0f;
     public CharacterController charController;
+    //public Transform hmdEyeTrans;
     //public bool isRotationEnabled;
     //public bool isTranslationEnabled;
 
@@ -29,9 +30,10 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
+        //charController.center = new Vector3(hmdEyeTrans.localPosition.x, 0.5f, hmdEyeTrans.localPosition.z);
         Vector2 moveVec = device.GetAxis();
         //Debug.Log("moveVec is " + moveVec);
-        Vector3 moveVec3D = new Vector3(moveVec.x, 0, moveVec.y);
+        Vector3 moveVec3D = new Vector3(speed * moveVec.x, 0, speed * moveVec.y);
         moveVec3D = Vector3.ClampMagnitude(moveVec3D, speed);
         moveVec3D = transform.TransformDirection(moveVec3D);
         Vector3 gravityVec = new Vector3(0, -9.8f, 0);
