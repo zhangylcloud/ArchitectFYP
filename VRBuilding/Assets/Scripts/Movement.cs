@@ -72,46 +72,73 @@ public class Movement : MonoBehaviour
             Debug.DrawLine(hitObj.point, hitObj.point + new Vector3(0, 1, 0), Color.red, 1.0f);
             Transform pivot1 = hitObj.collider.transform.Find("Pivot1");
             Transform pivot2 = hitObj.collider.transform.Find("Pivot2");
-            curPivotPos = pivot1.position;
-            Vector3 upDir = charModelTrans.up;
-            Vector3 forwardBackwardDir = Vector3.Cross(pivot2.position - pivot1.position, upDir);
-            Vector3 forwardDir;
-            if(moveVecWONormal.magnitude != 0)
+            //If we are going from the "turn" side of the corner
+            if(Vector3.Dot((pivot2.position - pivot1.position), charModelTrans.up) < 0.1 && Vector3.Dot((pivot2.position - pivot1.position), charModelTrans.up) > -0.1)
             {
-                forwardDir = Vector3.Dot(moveVecWONormal, forwardBackwardDir) * forwardBackwardDir;
+                curPivotPos = pivot1.position;
+                Vector3 upDir = charModelTrans.up;
+                Vector3 forwardBackwardDir = Vector3.Cross(pivot2.position - pivot1.position, upDir);
+                Vector3 forwardDir;
+                if (moveVecWONormal.magnitude != 0)
+                {
+                    forwardDir = Vector3.Dot(moveVecWONormal, forwardBackwardDir) * forwardBackwardDir;
+                }
+                else
+                {
+                    forwardDir = Vector3.Dot(hmdObj.transform.position - hmdLastFramePos, forwardBackwardDir) * forwardBackwardDir;
+                }
+
+                curForwardDir = forwardDir;
+                Vector3 rotatePivot = Vector3.Cross(forwardDir, upDir);
+                isRotating = true;
+                curRotatePivot = rotatePivot;
             }
-            else
+            else// If we are going from the flat side or the corner
             {
-                forwardDir = Vector3.Dot(hmdObj.transform.position - hmdLastFramePos, forwardBackwardDir) * forwardBackwardDir;
+                Vector3 gravityVec = new Vector3(0, -gravity, 0);
+                gravityVec = charModelTrans.TransformDirection(gravityVec);
+
+                moveVecWONormal += gravityVec;
+                moveVecWONormal *= Time.deltaTime;
+                charController.Move(moveVecWONormal);
             }
-            
-            curForwardDir = forwardDir;
-            Vector3 rotatePivot = Vector3.Cross(forwardDir, upDir);
-            isRotating = true;
-            curRotatePivot = rotatePivot;
+                
         }
         else if (!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 1.0f, 1 << LayerMask.NameToLayer("Turning2")))
         {
             Debug.DrawLine(hitObj.point, hitObj.point + new Vector3(0, 1, 0), Color.red, 1.0f);
             Transform pivot1 = hitObj.collider.transform.Find("Pivot1");
             Transform pivot2 = hitObj.collider.transform.Find("Pivot2");
-            curPivotPos = pivot1.position;
-            Vector3 upDir = charModelTrans.up;
-            Vector3 forwardBackwardDir = Vector3.Cross(pivot2.position - pivot1.position, upDir);
-            Vector3 forwardDir;
-            if (moveVecWONormal.magnitude != 0)
+            if (Vector3.Dot((pivot2.position - pivot1.position), charModelTrans.up) < 0.1 && Vector3.Dot((pivot2.position - pivot1.position), charModelTrans.up) > -0.1)
             {
-                forwardDir = Vector3.Dot(moveVecWONormal, forwardBackwardDir) * forwardBackwardDir;
+                curPivotPos = pivot1.position;
+                Vector3 upDir = charModelTrans.up;
+                Vector3 forwardBackwardDir = Vector3.Cross(pivot2.position - pivot1.position, upDir);
+                Vector3 forwardDir;
+                if (moveVecWONormal.magnitude != 0)
+                {
+                    forwardDir = Vector3.Dot(moveVecWONormal, forwardBackwardDir) * forwardBackwardDir;
+                }
+                else
+                {
+                    forwardDir = Vector3.Dot(hmdObj.transform.position - hmdLastFramePos, forwardBackwardDir) * forwardBackwardDir;
+                }
+
+                curForwardDir = forwardDir;
+                Vector3 rotatePivot = Vector3.Cross(forwardDir, upDir);
+                isRotating = true;
+                curRotatePivot = -rotatePivot;
             }
             else
             {
-                forwardDir = Vector3.Dot(hmdObj.transform.position - hmdLastFramePos, forwardBackwardDir) * forwardBackwardDir;
-            }
+                Vector3 gravityVec = new Vector3(0, -gravity, 0);
+                gravityVec = charModelTrans.TransformDirection(gravityVec);
 
-            curForwardDir = forwardDir;
-            Vector3 rotatePivot = Vector3.Cross(forwardDir, upDir);
-            isRotating = true;
-            curRotatePivot = - rotatePivot;
+                moveVecWONormal += gravityVec;
+                moveVecWONormal *= Time.deltaTime;
+                charController.Move(moveVecWONormal);
+            }
+                
         }
         else if (isRotating)
         {
