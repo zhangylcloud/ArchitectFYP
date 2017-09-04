@@ -103,6 +103,8 @@
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Portal\CollNTele.cs" />
+    <Compile Include="Assets\Scripts\Portal\PortalController.cs" />
+    <Compile Include="Assets\Scripts\PortalCollector.cs" />
     <Compile Include="Assets\Scripts\SpaceManager.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
