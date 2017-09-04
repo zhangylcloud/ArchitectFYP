@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33613139580573290}
   - component: {fileID: 23900622704442064}
   - component: {fileID: 64973376188382564}
+  - component: {fileID: 114695179168120448}
   m_Layer: 10
   m_Name: Mesh1
   m_TagString: Untagged
@@ -190,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249298716890270}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 18.585, y: 15.57, z: 3.9685}
+  m_LocalPosition: {x: 4.3016944, y: 28.90099, z: -41.695034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4249778890656660}
@@ -406,6 +407,25 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 71f8f8d8a38874143b0df27eb32614bd, type: 3}
+--- !u!114 &114695179168120448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004698232746632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c60bf6bf0fbb1c42ba050e17989e026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hmd: {fileID: 0}
+  renderQuad: {fileID: 1667655323585856}
+  senderQuad: {fileID: 1284375940974814}
+  disThreshold: 0
+  toPortalNum: 0
+  myPortalNum: 0
+  spaceManager: {fileID: 0}
+  stereoRenderer: {fileID: 0}
 --- !u!114 &114733253088868948
 MonoBehaviour:
   m_ObjectHideFlags: 1

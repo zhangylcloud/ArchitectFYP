@@ -14,13 +14,17 @@ public class CollNTele : MonoBehaviour
     private float prevDot = 0;
     private bool playerOverlapping = false;
 
-
-
+    public CharCtrlFollow playerControl;
+    public SpaceManager spaceManager;
+    public int myPortalNum;
     void Start()
     {
         playerCollider = GameObject.Find("PlayerCollider").GetComponent<Collider>();
         hmdRig = GameObject.Find("[CameraRig]");
         hmdEye = GameObject.Find("Camera (eye)");
+        playerControl = hmdRig.GetComponent<CharCtrlFollow>();
+        spaceManager = GameObject.Find("SpaceManager").GetComponent<SpaceManager>();
+        myPortalNum = transform.parent.GetComponent<PortalController>().myPortalNum;
     }
 
     private void Update()
@@ -31,7 +35,11 @@ public class CollNTele : MonoBehaviour
 
             if (currentDot > 0)  // only transport the player once he's moved across plane
             {
+                GameObject prevSpace = playerControl.currentSpace;
                 teleport();
+                //after teleport, disable the space jump from
+                spaceManager.rearrangeFace(spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum)));
+                prevSpace.SetActive(false);
                 playerOverlapping = false;
             }
 

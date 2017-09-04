@@ -13,6 +13,8 @@ public class SpaceManager : MonoBehaviour {
     //Directions for use
     public Quaternion[] dirs = new Quaternion[6];
 
+    public GameObject player;
+
 	// Use this for initialization
 	void Start () {
         //portal look up table
@@ -155,11 +157,23 @@ public class SpaceManager : MonoBehaviour {
     }
     public void DisableSpace(int spaceNum)
     {
-        spaces[spaceNum].SetActive(false);
+        //Never disable current space
+        if(spaces[spaceNum] != player.GetComponent<CharCtrlFollow>().currentSpace)
+        {
+            spaces[spaceNum].SetActive(false);
+        }
+        
     }
     //rearrange faces (spaces array) to ensure at every moment spaces are in correct position in the array
-    public void RearrangeFace(int fromFaceNum, int toFaceNum)
+    public void rearrangeFace(int toFaceNum)
     {
+        if(toFaceNum < 7)
+        {
+            GameObject tmp = spaces[0];
+            spaces[0] = spaces[toFaceNum];
+            spaces[toFaceNum] = tmp;
+            //spaces[toFaceNum].transform.rotation = dirs[toFaceNum];
+        }
 
     }
 }
