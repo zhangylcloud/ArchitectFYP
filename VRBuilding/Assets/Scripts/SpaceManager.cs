@@ -14,9 +14,11 @@ public class SpaceManager : MonoBehaviour {
     public Quaternion[] rotations = new Quaternion[6];
 
     public GameObject player;
+    public int currentFace;
 
 	// Use this for initialization
 	void Start () {
+        currentFace = 0;//initially, player at face 0 (temp face)
         //6 directions in use
         rotations[0] = new Quaternion(0, 0, 0, 1);//up
         rotations[1] = new Quaternion(0, 0, 1, 0);//down
@@ -112,57 +114,86 @@ public class SpaceManager : MonoBehaviour {
 
         //portal face match
         portalFaceMatch[0] = 0;
-        portalFaceMatch[1] = 0;
-        portalFaceMatch[2] = 0;
-        portalFaceMatch[3] = 0;
+        portalFaceMatch[1] = 2;
+        portalFaceMatch[2] = 2;
+        portalFaceMatch[3] = 4;
         portalFaceMatch[4] = 0;
-        portalFaceMatch[5] = 0;
-        portalFaceMatch[6] = 0;
-        portalFaceMatch[7] = 0;
-        portalFaceMatch[8] = 0;
-        portalFaceMatch[9] = 0;
-        portalFaceMatch[10] = 0;
-        portalFaceMatch[11] = 0;
-        portalFaceMatch[12] = 0;
-        portalFaceMatch[13] = 0;
-        portalFaceMatch[14] = 0;
-        portalFaceMatch[15] = 0;
-        portalFaceMatch[16] = 0;
-        portalFaceMatch[17] = 0;
-        portalFaceMatch[18] = 0;
-        portalFaceMatch[19] = 0;
+        portalFaceMatch[5] = 2;
+        portalFaceMatch[6] = 2;
+        portalFaceMatch[7] = 4;
+        portalFaceMatch[8] = 4;
+        portalFaceMatch[9] = 1;
+        portalFaceMatch[10] = 4;
+        portalFaceMatch[11] = 1;
+        portalFaceMatch[12] = 5;
+        portalFaceMatch[13] = 2;
+        portalFaceMatch[14] = 1;
+        portalFaceMatch[15] = 1;
+        portalFaceMatch[16] = 1;
+        portalFaceMatch[17] = 1;
+        portalFaceMatch[18] = 4;
+        portalFaceMatch[19] = 3;
         portalFaceMatch[20] = 0;
-        portalFaceMatch[21] = 0;
-        portalFaceMatch[22] = 0;
-        portalFaceMatch[23] = 0;
-        portalFaceMatch[24] = 0;
-        portalFaceMatch[25] = 0;
+        portalFaceMatch[21] = 4;
+        portalFaceMatch[22] = 4;
+        portalFaceMatch[23] = 4;
+        portalFaceMatch[24] = 5;
+        portalFaceMatch[25] = 4;
         portalFaceMatch[26] = 0;
         portalFaceMatch[27] = 0;
         portalFaceMatch[28] = 0;
-        portalFaceMatch[29] = 0;
-        portalFaceMatch[30] = 0;
-        portalFaceMatch[31] = 0;
-        portalFaceMatch[32] = 0;
-        portalFaceMatch[33] = 0;
-        portalFaceMatch[34] = 0;
-        portalFaceMatch[35] = 0;
-        portalFaceMatch[36] = 0;
-        portalFaceMatch[37] = 0;
-        portalFaceMatch[38] = 0;
-        portalFaceMatch[39] = 0;
-        portalFaceMatch[40] = 0;
-        portalFaceMatch[41] = 0;
-        portalFaceMatch[42] = 0;
+        portalFaceMatch[29] = 2;
+        portalFaceMatch[30] = 2;
+        portalFaceMatch[31] = 4;
+        portalFaceMatch[32] = 4;
+        portalFaceMatch[33] = 2;
+        portalFaceMatch[34] = 4;
+        portalFaceMatch[35] = 5;
+        portalFaceMatch[36] = 1;
+        portalFaceMatch[37] = 4;
+        portalFaceMatch[38] = 2;
+        portalFaceMatch[39] = 2;
+        portalFaceMatch[40] = 1;
+        portalFaceMatch[41] = 12;
+        portalFaceMatch[42] = 7;
         portalFaceMatch[43] = 0;
-        portalFaceMatch[44] = 0;
-        portalFaceMatch[45] = 0;
+        portalFaceMatch[44] = 10;
+        portalFaceMatch[45] = 11;
         portalFaceMatch[46] = 0;
-        portalFaceMatch[47] = 0;
+        portalFaceMatch[47] = 10;
         portalFaceMatch[48] = 0;
         portalFaceMatch[49] = 0;
+        portalFaceMatch[50] = 0;
+        portalFaceMatch[51] = 13;
+        portalFaceMatch[52] = 0;
+        portalFaceMatch[53] = 0;
+        portalFaceMatch[54] = 0;
+        portalFaceMatch[55] = 0;
+        portalFaceMatch[56] = 0;
+        portalFaceMatch[57] = 7;
+        portalFaceMatch[58] = 9;
+        portalFaceMatch[59] = 0;
+        portalFaceMatch[60] = 0;
+        portalFaceMatch[61] = 1;
+        portalFaceMatch[62] = 9;
+        portalFaceMatch[63] = 14;
+        portalFaceMatch[64] = 12;
+        portalFaceMatch[65] = 0;
+        portalFaceMatch[66] = 15;
+        portalFaceMatch[67] = 8;
+        portalFaceMatch[68] = 12;
+        portalFaceMatch[69] = 13;
+        portalFaceMatch[70] = 8;
+        portalFaceMatch[71] = 0;
+        portalFaceMatch[72] = 11;
+        portalFaceMatch[73] = 9;
+        portalFaceMatch[74] = 0;
+        portalFaceMatch[75] = 0;
+        portalFaceMatch[76] = 19;
+        portalFaceMatch[77] = 0;
+        portalFaceMatch[78] = 18;
 
-        for(int i = 1; i < 15; ++i)
+        for (int i = 1; i < 15; ++i)
         {
             spaces[i].SetActive(false);
         }
@@ -205,15 +236,28 @@ public class SpaceManager : MonoBehaviour {
         
     }
     //rearrange faces (spaces array) to ensure at every moment spaces are in correct position in the array
-    public void rearrangeFace(int toFaceNum)
+    public void RearrangeFace(int fromFaceNum, int toFaceNum)
     {
         if(toFaceNum < 7)
         {
             GameObject tmp = spaces[0];
             spaces[0] = spaces[toFaceNum];
             spaces[toFaceNum] = tmp;
-            //spaces[toFaceNum].transform.rotation = dirs[toFaceNum];
+            //make the rotation of the previous standing space facing in the correct direction, for future use
+            spaces[toFaceNum].transform.rotation = rotations[toFaceNum];
+        }
+        if(fromFaceNum >= 14 && fromFaceNum <= 19)//if jump from hanging garden, need to reset the rotation of it.
+        {
+            spaces[fromFaceNum].transform.rotation = rotations[fromFaceNum - 14];
         }
 
+    }
+    public int GetCurrentFace()
+    {
+        return currentFace;
+    }
+    public void SetCurrentFace(int faceNum)
+    {
+        currentFace = faceNum;
     }
 }

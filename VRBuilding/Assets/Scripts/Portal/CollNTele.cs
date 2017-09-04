@@ -36,9 +36,12 @@ public class CollNTele : MonoBehaviour
             if (currentDot > 0)  // only transport the player once he's moved across plane
             {
                 GameObject prevSpace = playerControl.currentSpace;
+                int prevFaceNum = spaceManager.GetCurrentFace();
                 teleport();
                 //after teleport, disable the space jump from
-                spaceManager.rearrangeFace(spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum)));
+                int toSpaceNum = spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum));
+                spaceManager.RearrangeFace(prevFaceNum, toSpaceNum);
+                spaceManager.SetCurrentFace(toSpaceNum < 7 ? 0 : toSpaceNum);
                 prevSpace.SetActive(false);
                 playerOverlapping = false;
             }
