@@ -7,16 +7,25 @@ public class SpaceManager : MonoBehaviour {
     //given a portal number, find which face on the mainspace it is (0 - 5)
     private int[] portalFaceMatch = new int[80];
 
-    //0: tmp Mainspace, 1-6 mainspace with faces, 7-14: subspaces
-    public GameObject[] spaces = new GameObject[15];
+    //0: tmp Mainspace, 1-6 mainspace with faces, 7-13: subspaces 14-19: multidir subspace(use 6 face, like main space)
+    public GameObject[] spaces = new GameObject[19];
 
     //Directions for use
-    public Quaternion[] dirs = new Quaternion[6];
+    public Quaternion[] rotations = new Quaternion[6];
 
     public GameObject player;
 
 	// Use this for initialization
 	void Start () {
+        //6 directions in use
+        rotations[0] = new Quaternion(0, 0, 0, 1);//up
+        rotations[1] = new Quaternion(0, 0, 1, 0);//down
+        rotations[2] = new Quaternion(0.7f, 0, 0, 0.7f);//left
+        rotations[3] = new Quaternion(-0.7f, 0, 0, 0.7f);//right
+        rotations[4] = new Quaternion(0, 0, -0.7f, 0.7f);//front
+        rotations[5] = new Quaternion(0, 0, 0.7f, 0.7f);//back
+
+
         //portal look up table
         portalLookUpTable[0] = 0;
         portalLookUpTable[1] = 41;

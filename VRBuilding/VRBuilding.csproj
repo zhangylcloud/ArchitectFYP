@@ -100,6 +100,7 @@
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderer.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderManager.cs" />
     <Compile Include="Assets\Scripts\CharCtrlFollow.cs" />
+    <Compile Include="Assets\Scripts\DirPrinter.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Portal\CollNTele.cs" />
