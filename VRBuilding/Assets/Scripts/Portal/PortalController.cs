@@ -25,6 +25,7 @@ public class PortalController : MonoBehaviour {
 
         GameObject sm = GameObject.Find("SpaceManager");
         spaceManager = sm.GetComponent<SpaceManager>();
+        toPortalNum = spaceManager.GetToPortalNum(myPortalNum);
         Transform renderQuadTrans = transform.Find("RenderQuad");
         stereoRenderer = renderQuadTrans.GetComponent<StereoRenderer>();
         renderQuad.SetActive(false);
