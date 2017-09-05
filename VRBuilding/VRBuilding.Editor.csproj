@@ -150,6 +150,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Editor\DisplacementTrailRendererEditor.cs" />
+    <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Editor\GrassEditor.cs" />
+    <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Editor\GrassEditorUtility.cs" />
+    <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Editor\GrassPainterWindow.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\Editor\StereoRendererEditor.cs" />
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Editor.cs" />
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Preferences.cs" />
@@ -159,6 +163,21 @@
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Camera-DepthNormalTexture.shader" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\Textures\CGTextures.txt" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Grass.shader" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassConfig.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassDefinitionsAndFunctions.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassDynamicsShaders\MeshNormalRenderer.shader" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassDynamicsShaders\NormalmapRenderer.shader" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassDynamicsShaders\WindRenderer.shader" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassFrag.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassGeom.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassLighting.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassSurface.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassTessellation.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassVertex.cginc" />
+    <None Include="Assets\Grass_Shader\DirectX 11 Grass Shader\GrassWind.cginc" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\ScreenSpaceShadows-ForCustomPerspectiveMat.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader_5_3.shader" />
