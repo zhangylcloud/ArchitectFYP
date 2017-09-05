@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
 
         //Test if at corner
         RaycastHit hitObj;
-        if(!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 2.0f, 1 << LayerMask.NameToLayer("Turning1"))){
+        if(!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 1.6f, 1 << LayerMask.NameToLayer("Turning1"))){
             Debug.DrawLine(hitObj.point, hitObj.point + new Vector3(0, 1, 0), Color.red, 1.0f);
             Transform pivot1 = hitObj.collider.transform.Find("Pivot1");
             Transform pivot2 = hitObj.collider.transform.Find("Pivot2");
@@ -105,7 +105,7 @@ public class Movement : MonoBehaviour
             }
                 
         }
-        else if (!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 1.0f, 1 << LayerMask.NameToLayer("Turning2")))
+        else if (!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 1.6f, 1 << LayerMask.NameToLayer("Turning2")))
         {
             Debug.DrawLine(hitObj.point, hitObj.point + new Vector3(0, 1, 0), Color.red, 1.0f);
             Transform pivot1 = hitObj.collider.transform.Find("Pivot1");

@@ -90,7 +90,7 @@ public class SpaceManager : MonoBehaviour {
         portalLookUpTable[58] = 18;
         portalLookUpTable[59] = 0;
         portalLookUpTable[60] = 0;
-        portalLookUpTable[61] = 0;
+        portalLookUpTable[61] = 3;
         portalLookUpTable[62] = 22;
         portalLookUpTable[63] = 23;
         portalLookUpTable[64] = 24;
@@ -174,7 +174,7 @@ public class SpaceManager : MonoBehaviour {
         portalFaceMatch[58] = 9;
         portalFaceMatch[59] = 0;
         portalFaceMatch[60] = 0;
-        portalFaceMatch[61] = 1;
+        portalFaceMatch[61] = 5;
         portalFaceMatch[62] = 9;
         portalFaceMatch[63] = 14;
         portalFaceMatch[64] = 12;

@@ -14,6 +14,6 @@ public class CharCtrlFollow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        charController.center = new Vector3(hmdEyeTrans.localPosition.x, 0.5f, hmdEyeTrans.localPosition.z);
+        charController.center = new Vector3(hmdEyeTrans.localPosition.x, 0.4f, hmdEyeTrans.localPosition.z);
 	}
 }
