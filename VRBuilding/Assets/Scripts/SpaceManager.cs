@@ -8,7 +8,7 @@ public class SpaceManager : MonoBehaviour {
     private int[] portalFaceMatch = new int[80];
 
     //0: tmp Mainspace, 1-6 mainspace with faces, 7-13: subspaces 14-19: multidir subspace(use 6 face, like main space)
-    public GameObject[] spaces = new GameObject[19];
+    public GameObject[] spaces = new GameObject[20];
 
     //Directions for use
     public Quaternion[] rotations = new Quaternion[6];
@@ -114,46 +114,46 @@ public class SpaceManager : MonoBehaviour {
 
         //portal face match
         portalFaceMatch[0] = 0;
-        portalFaceMatch[1] = 2;
-        portalFaceMatch[2] = 2;
-        portalFaceMatch[3] = 4;
-        portalFaceMatch[4] = 0;
-        portalFaceMatch[5] = 2;
-        portalFaceMatch[6] = 2;
-        portalFaceMatch[7] = 4;
-        portalFaceMatch[8] = 4;
-        portalFaceMatch[9] = 1;
-        portalFaceMatch[10] = 4;
-        portalFaceMatch[11] = 1;
-        portalFaceMatch[12] = 5;
-        portalFaceMatch[13] = 2;
-        portalFaceMatch[14] = 1;
-        portalFaceMatch[15] = 1;
-        portalFaceMatch[16] = 1;
-        portalFaceMatch[17] = 1;
-        portalFaceMatch[18] = 4;
-        portalFaceMatch[19] = 3;
-        portalFaceMatch[20] = 0;
-        portalFaceMatch[21] = 4;
-        portalFaceMatch[22] = 4;
-        portalFaceMatch[23] = 4;
-        portalFaceMatch[24] = 5;
-        portalFaceMatch[25] = 4;
-        portalFaceMatch[26] = 0;
-        portalFaceMatch[27] = 0;
-        portalFaceMatch[28] = 0;
-        portalFaceMatch[29] = 2;
-        portalFaceMatch[30] = 2;
-        portalFaceMatch[31] = 4;
-        portalFaceMatch[32] = 4;
-        portalFaceMatch[33] = 2;
-        portalFaceMatch[34] = 4;
-        portalFaceMatch[35] = 5;
-        portalFaceMatch[36] = 1;
-        portalFaceMatch[37] = 4;
-        portalFaceMatch[38] = 2;
-        portalFaceMatch[39] = 2;
-        portalFaceMatch[40] = 1;
+        portalFaceMatch[1] = 3;
+        portalFaceMatch[2] = 3;
+        portalFaceMatch[3] = 5;
+        portalFaceMatch[4] = 1;
+        portalFaceMatch[5] = 3;
+        portalFaceMatch[6] = 3;
+        portalFaceMatch[7] = 5;
+        portalFaceMatch[8] = 5;
+        portalFaceMatch[9] = 2;
+        portalFaceMatch[10] = 5;
+        portalFaceMatch[11] = 2;
+        portalFaceMatch[12] = 6;
+        portalFaceMatch[13] = 3;
+        portalFaceMatch[14] = 2;
+        portalFaceMatch[15] = 2;
+        portalFaceMatch[16] = 2;
+        portalFaceMatch[17] = 2;
+        portalFaceMatch[18] = 5;
+        portalFaceMatch[19] = 4;
+        portalFaceMatch[20] = 1;
+        portalFaceMatch[21] = 5;
+        portalFaceMatch[22] = 5;
+        portalFaceMatch[23] = 5;
+        portalFaceMatch[24] = 6;
+        portalFaceMatch[25] = 5;
+        portalFaceMatch[26] = 1;
+        portalFaceMatch[27] = 1;
+        portalFaceMatch[28] = 1;
+        portalFaceMatch[29] = 3;
+        portalFaceMatch[30] = 3;
+        portalFaceMatch[31] = 5;
+        portalFaceMatch[32] = 5;
+        portalFaceMatch[33] = 3;
+        portalFaceMatch[34] = 5;
+        portalFaceMatch[35] = 6;
+        portalFaceMatch[36] = 2;
+        portalFaceMatch[37] = 5;
+        portalFaceMatch[38] = 3;
+        portalFaceMatch[39] = 3;
+        portalFaceMatch[40] = 2;
         portalFaceMatch[41] = 12;
         portalFaceMatch[42] = 7;
         portalFaceMatch[43] = 0;
@@ -193,7 +193,16 @@ public class SpaceManager : MonoBehaviour {
         portalFaceMatch[77] = 0;
         portalFaceMatch[78] = 18;
 
-        for (int i = 1; i < 15; ++i)
+        for(int i = 1; i <= 6; ++i)
+        {
+            spaces[i].transform.rotation = rotations[i - 1];
+        }
+
+        for(int i = 14; i <= 19; ++i)
+        {
+            spaces[i].transform.rotation = rotations[i - 14];
+        }
+        for (int i = 1; i < 20; ++i)
         {
             spaces[i].SetActive(false);
         }
@@ -229,11 +238,15 @@ public class SpaceManager : MonoBehaviour {
     public void DisableSpace(int spaceNum)
     {
         //Never disable current space
-        if(spaces[spaceNum] != player.GetComponent<CharCtrlFollow>().currentSpace)
+        /*if(spaces[spaceNum] != player.GetComponent<CharCtrlFollow>().currentSpace)
+        {
+            spaces[spaceNum].SetActive(false);
+        }*/
+        if (spaceNum != currentFace)
         {
             spaces[spaceNum].SetActive(false);
         }
-        
+
     }
     //rearrange faces (spaces array) to ensure at every moment spaces are in correct position in the array
     public void RearrangeFace(int fromFaceNum, int toFaceNum)
@@ -244,7 +257,7 @@ public class SpaceManager : MonoBehaviour {
             spaces[0] = spaces[toFaceNum];
             spaces[toFaceNum] = tmp;
             //make the rotation of the previous standing space facing in the correct direction, for future use
-            spaces[toFaceNum].transform.rotation = rotations[toFaceNum];
+            spaces[toFaceNum].transform.rotation = rotations[toFaceNum - 1];
         }
         if(fromFaceNum >= 14 && fromFaceNum <= 19)//if jump from hanging garden, need to reset the rotation of it.
         {

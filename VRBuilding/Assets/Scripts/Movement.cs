@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public Transform charModelTrans;
     public float speed = 1.0f;
     public float gravity = 9.8f;
-    float gravitySpeed = 0;
+    //float gravitySpeed = 0;
     public CharacterController charController;
     public GameObject hmdObj;
 
@@ -21,8 +21,8 @@ public class Movement : MonoBehaviour
     private Vector3 curForwardDir;
     private Vector3 hmdLastFramePos;
 
+    SpaceManager spaceManager;
 
-    public Transform currentSpace;
 
     SteamVR_TrackedObject trackedObj;
     private void Awake()
@@ -32,8 +32,9 @@ public class Movement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        spaceManager = GameObject.Find("SpaceManager").GetComponent<SpaceManager>();
         totalRotatedAngle = 0;
-        gravitySpeed = 0;
+        //gravitySpeed = 0;
         isRotating = false;
         isTransition = false;
 
@@ -144,7 +145,7 @@ public class Movement : MonoBehaviour
         {
             if(totalRotatedAngle < 90)
             {
-                currentSpace.RotateAround(curPivotPos, curRotatePivot, 30 * Time.deltaTime);
+                spaceManager.spaces[spaceManager.GetCurrentFace()].transform.RotateAround(curPivotPos, curRotatePivot, 30 * Time.deltaTime);
                 totalRotatedAngle += 30 * Time.deltaTime;
             }
             else

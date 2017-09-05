@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharCtrlFollow : MonoBehaviour {
     public CharacterController charController;
     public Transform hmdEyeTrans;
-    public GameObject currentSpace;
+    //public GameObject currentSpace;
 	// Use this for initialization
 	void Start () {
 		

@@ -11,7 +11,7 @@ public class PortalController : MonoBehaviour {
     private bool isEnableFlag;
     public float disThreshold;
 
-    public int toPortalNum;
+    //private int toPortalNum;
     public int myPortalNum;
 
     public SpaceManager spaceManager;
@@ -25,7 +25,7 @@ public class PortalController : MonoBehaviour {
 
         GameObject sm = GameObject.Find("SpaceManager");
         spaceManager = sm.GetComponent<SpaceManager>();
-        toPortalNum = spaceManager.GetToPortalNum(myPortalNum);
+        //toPortalNum = spaceManager.GetToPortalNum(myPortalNum);
         Transform renderQuadTrans = transform.Find("RenderQuad");
         stereoRenderer = renderQuadTrans.GetComponent<StereoRenderer>();
         renderQuad.SetActive(false);
@@ -34,21 +34,22 @@ public class PortalController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Debug.Log("To portal number " + toPortalNum);
         hmdPos = hmd.position;	
         if(isEnableFlag == false && (hmdPos - transform.position).magnitude < disThreshold)
         {
             renderQuad.SetActive(true);
             senderQuad.SetActive(true);
-            Transform toPortalAnchor = spaceManager.GetToPortalAnchor(toPortalNum);
-            stereoRenderer.anchorTransform = toPortalAnchor;
-            int toSpaceNum = spaceManager.GetSpaceNum(toPortalNum);
+            int toSpaceNum = spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum));
             spaceManager.EnableSpace(toSpaceNum);
+            Transform toPortalAnchor = spaceManager.GetToPortalAnchor(spaceManager.GetToPortalNum(myPortalNum));
+            stereoRenderer.anchorTransform = toPortalAnchor;
             isEnableFlag = true;
         }
         else if(isEnableFlag == true && (hmdPos - transform.position).magnitude > disThreshold){
             renderQuad.SetActive(false);
             senderQuad.SetActive(false);
-            int toSpaceNum = spaceManager.GetSpaceNum(toPortalNum);
+            int toSpaceNum = spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum));
             spaceManager.DisableSpace(toSpaceNum);
             isEnableFlag = false;
         }
