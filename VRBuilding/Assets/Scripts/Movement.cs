@@ -5,12 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class Movement : MonoBehaviour
 {
+
+    public const float speedSet = 3;
+    
+
+
     public Jump jumpController;
     private float upSpeed;
 
 
+
     public Transform charModelTrans;
-    public float speed = 1.0f;
+    public float speed = speedSet;
     //public float gravity = 9.8f;
     //float gravitySpeed = 0;
     public CharacterController charController;
@@ -42,15 +48,18 @@ public class Movement : MonoBehaviour
         isRotating = false;
         isTransition = false;
 
-
         upSpeed = 0;
     }
 
+    public float GetSpeedSet()
+    {
+        return speedSet;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         //Vector3 pointToCenter = ball.position - (charModelTrans.position + charController.center);
-
+        
         
 
         SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
@@ -73,8 +82,9 @@ public class Movement : MonoBehaviour
         
 
 
-        //Test if at corner
         RaycastHit hitObj;
+
+        //Test if at corner
         if(!isRotating && !isTransition && Physics.Raycast(hmdObj.transform.position, new Vector3(0, -1, 0), out hitObj, 1.6f, 1 << LayerMask.NameToLayer("Turning1"))){
             Debug.DrawLine(hitObj.point, hitObj.point + new Vector3(0, 1, 0), Color.red, 1.0f);
             Transform pivot1 = hitObj.collider.transform.Find("Pivot1");

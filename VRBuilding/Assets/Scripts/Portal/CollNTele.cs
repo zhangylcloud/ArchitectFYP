@@ -27,7 +27,7 @@ public class CollNTele : MonoBehaviour
         myPortalNum = transform.parent.GetComponent<PortalController>().myPortalNum;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (playerOverlapping)
         {

@@ -25,7 +25,7 @@ public class GravityChange : MonoBehaviour {
         else if(isInAreaFlag && (playerController.transform.position - transform.position).magnitude > distanceAffected)
         {
             isInAreaFlag = false;
-            jumpController.gravity = 9.8f;
+            jumpController.gravity = jumpController.GetGravitySet();
         }
 	}
 }
