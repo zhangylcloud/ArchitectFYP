@@ -5,17 +5,21 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class Movement : MonoBehaviour
 {
+    public Jump jumpController;
+    private float upSpeed;
+
+
     public Transform charModelTrans;
     public float speed = 1.0f;
     public float gravity = 9.8f;
     //float gravitySpeed = 0;
     public CharacterController charController;
     public GameObject hmdObj;
-
+    
     private float totalRotatedAngle;
-    private bool isRotating;
+    public bool isRotating;
     private float totalTransitionDistance;
-    private bool isTransition;//After rotation, move the character controller even further away to avoid trigger rotation again
+    public bool isTransition;//After rotation, move the character controller even further away to avoid trigger rotation again
     private Vector3 curRotatePivot;
     private Vector3 curPivotPos;
     private Vector3 curForwardDir;
@@ -38,6 +42,8 @@ public class Movement : MonoBehaviour
         isRotating = false;
         isTransition = false;
 
+
+        upSpeed = 0;
     }
 
     // Update is called once per frame
@@ -170,10 +176,27 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            Vector3 gravityVec = new Vector3(0, -gravity, 0);
-            gravityVec = charModelTrans.TransformDirection(gravityVec);
+            if (charController.isGrounded)
+            {
+                if (jumpController.isButtonPressed)
+                {
+                    upSpeed = jumpController.jumpSpeed;
+                }
+                else
+                {
+                    upSpeed = 0;
+                }
+            }
+            else
+            {
+                upSpeed -= gravity * Time.deltaTime;
+            }
+            Vector3 curUpVec = new Vector3(0, upSpeed, 0);
+            //charController.Move(curUpVec * Time.deltaTime);
+            //Vector3 gravityVec = new Vector3(0, -gravity, 0);
+            curUpVec = charModelTrans.TransformDirection(curUpVec);
 
-            moveVecWONormal += gravityVec;
+            moveVecWONormal += curUpVec;
             moveVecWONormal *= Time.deltaTime;
             charController.Move(moveVecWONormal);
         }

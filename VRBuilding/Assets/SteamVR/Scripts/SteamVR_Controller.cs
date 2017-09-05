@@ -17,6 +17,7 @@ public class SteamVR_Controller
 {
 	public class ButtonMask
 	{
+        public const ulong ButtonA = (1ul << (int)EVRButtonId.k_EButton_A);
 		public const ulong System			= (1ul << (int)EVRButtonId.k_EButton_System); // reserved
 		public const ulong ApplicationMenu	= (1ul << (int)EVRButtonId.k_EButton_ApplicationMenu);
 		public const ulong Grip				= (1ul << (int)EVRButtonId.k_EButton_Grip);

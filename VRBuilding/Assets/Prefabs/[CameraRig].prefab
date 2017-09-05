@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4878100831329548}
   - component: {fileID: 114412111845610626}
+  - component: {fileID: 114915420949387656}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -197,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210011203232558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.23, y: 23.57, z: 2.63}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4004005606011476}
@@ -427,12 +428,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25767a87fcfb07a40afcf39026856d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpController: {fileID: 114915420949387656}
   charModelTrans: {fileID: 4513930878859972}
   speed: 6
   gravity: 9.8
   charController: {fileID: 143931958774059988}
   hmdObj: {fileID: 1202492942368944}
-  currentSpace: {fileID: 0}
+  isRotating: 0
+  isTransition: 0
 --- !u!114 &114284171892280444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,7 +461,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charController: {fileID: 143931958774059988}
   hmdEyeTrans: {fileID: 4958775270331062}
-  currentSpace: {fileID: 0}
 --- !u!114 &114351873932349764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -557,6 +559,21 @@ MonoBehaviour:
   right: {fileID: 1327033397849622}
   objects: []
   assignAllBeforeIdentified: 0
+--- !u!114 &114915420949387656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327033397849622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099d892861e52364c841a87bc1587f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charController: {fileID: 143931958774059988}
+  jumpSpeed: 3
+  gravity: 9.8
+  isButtonPressed: 0
 --- !u!124 &124674235995593362
 Behaviour:
   m_ObjectHideFlags: 1
@@ -574,7 +591,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
+  m_Height: 0.8
   m_Radius: 0.2
   m_SlopeLimit: 50
   m_StepOffset: 0.3
