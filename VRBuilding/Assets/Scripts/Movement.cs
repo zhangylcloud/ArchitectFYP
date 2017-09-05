@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
 
     public Transform charModelTrans;
     public float speed = 1.0f;
-    public float gravity = 9.8f;
+    //public float gravity = 9.8f;
     //float gravitySpeed = 0;
     public CharacterController charController;
     public GameObject hmdObj;
@@ -102,10 +102,27 @@ public class Movement : MonoBehaviour
             }
             else// If we are going from the flat side or the corner
             {
-                Vector3 gravityVec = new Vector3(0, -gravity, 0);
-                gravityVec = charModelTrans.TransformDirection(gravityVec);
+                if (charController.isGrounded)
+                {
+                    if (jumpController.isButtonPressed)
+                    {
+                        upSpeed = jumpController.jumpSpeed;
+                    }
+                    else
+                    {
+                        upSpeed = 0;
+                    }
+                }
+                else
+                {
+                    upSpeed -= jumpController.gravity * Time.deltaTime;
+                }
+                Vector3 curUpVec = new Vector3(0, upSpeed, 0);
+                //charController.Move(curUpVec * Time.deltaTime);
+                //Vector3 gravityVec = new Vector3(0, -gravity, 0);
+                curUpVec = charModelTrans.TransformDirection(curUpVec);
 
-                moveVecWONormal += gravityVec;
+                moveVecWONormal += curUpVec;
                 moveVecWONormal *= Time.deltaTime;
                 charController.Move(moveVecWONormal);
             }
@@ -138,10 +155,27 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                Vector3 gravityVec = new Vector3(0, -gravity, 0);
-                gravityVec = charModelTrans.TransformDirection(gravityVec);
+                if (charController.isGrounded)
+                {
+                    if (jumpController.isButtonPressed)
+                    {
+                        upSpeed = jumpController.jumpSpeed;
+                    }
+                    else
+                    {
+                        upSpeed = 0;
+                    }
+                }
+                else
+                {
+                    upSpeed -= jumpController.gravity * Time.deltaTime;
+                }
+                Vector3 curUpVec = new Vector3(0, upSpeed, 0);
+                //charController.Move(curUpVec * Time.deltaTime);
+                //Vector3 gravityVec = new Vector3(0, -gravity, 0);
+                curUpVec = charModelTrans.TransformDirection(curUpVec);
 
-                moveVecWONormal += gravityVec;
+                moveVecWONormal += curUpVec;
                 moveVecWONormal *= Time.deltaTime;
                 charController.Move(moveVecWONormal);
             }
@@ -189,7 +223,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                upSpeed -= gravity * Time.deltaTime;
+                upSpeed -= jumpController.gravity * Time.deltaTime;
             }
             Vector3 curUpVec = new Vector3(0, upSpeed, 0);
             //charController.Move(curUpVec * Time.deltaTime);
