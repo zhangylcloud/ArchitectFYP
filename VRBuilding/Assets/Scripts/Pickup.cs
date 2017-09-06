@@ -45,6 +45,7 @@ public class Pickup : MonoBehaviour
 
             if(other.gameObject.tag == "DialogueCoin")
             {
+                other.gameObject.GetComponent<AudioSource>().Play();
                 other.gameObject.GetComponent<DialogueControl>().EnableDialogue();
             }
         }
