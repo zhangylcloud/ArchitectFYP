@@ -125,7 +125,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4878100831329548}
   - component: {fileID: 114412111845610626}
-  - component: {fileID: 114915420949387656}
+  - component: {fileID: 135626018565137168}
+  - component: {fileID: 114665791370888302}
+  - component: {fileID: 114802391176868056}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -198,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210011203232558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 76.408, y: 45.312, z: -65.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4004005606011476}
@@ -428,10 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25767a87fcfb07a40afcf39026856d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpController: {fileID: 114915420949387656}
+  jumpController: {fileID: 114802391176868056}
   charModelTrans: {fileID: 4513930878859972}
-  speed: 6
-  gravity: 9.8
+  speed: 3
   charController: {fileID: 143931958774059988}
   hmdObj: {fileID: 1202492942368944}
   isRotating: 0
@@ -527,6 +528,33 @@ MonoBehaviour:
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
   - {x: 1.65, y: 0.01, z: 1.275}
+--- !u!114 &114665791370888302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327033397849622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2add5f8beec4946a5b32eaeab6f2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charController: {fileID: 143931958774059988}
+--- !u!114 &114802391176868056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327033397849622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099d892861e52364c841a87bc1587f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charController: {fileID: 143931958774059988}
+  jumpSpeed: 3
+  gravity: 9.8
+  isButtonPressed: 0
 --- !u!114 &114858639598621102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,21 +587,6 @@ MonoBehaviour:
   right: {fileID: 1327033397849622}
   objects: []
   assignAllBeforeIdentified: 0
---- !u!114 &114915420949387656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1327033397849622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 099d892861e52364c841a87bc1587f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charController: {fileID: 143931958774059988}
-  jumpSpeed: 3
-  gravity: 9.8
-  isButtonPressed: 0
 --- !u!124 &124674235995593362
 Behaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +594,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202492942368944}
   m_Enabled: 1
+--- !u!135 &135626018565137168
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327033397849622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143931958774059988
 CharacterController:
   m_ObjectHideFlags: 1

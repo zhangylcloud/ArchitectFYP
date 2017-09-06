@@ -42,6 +42,11 @@ public class Pickup : MonoBehaviour
             other.transform.rotation = transform.rotation;
             originalParent = other.gameObject.transform.parent;
             other.gameObject.transform.SetParent(transform);
+
+            if(other.gameObject.tag == "DialogueCoin")
+            {
+                other.gameObject.GetComponent<DialogueControl>().EnableDialogue();
+            }
         }
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
@@ -50,6 +55,10 @@ public class Pickup : MonoBehaviour
             other.attachedRigidbody.isKinematic = false;
             other.attachedRigidbody.useGravity = true;
             tossObject(other.attachedRigidbody);
+            if (other.gameObject.tag == "DialogueCoin")
+            {
+                other.gameObject.GetComponent<DialogueControl>().DisableDialogue();
+            }
         }
         
     }
