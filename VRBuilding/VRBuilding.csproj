@@ -156,8 +156,10 @@
     <Compile Include="Assets\Scripts\DungeonManager.cs" />
     <Compile Include="Assets\Scripts\GravityChange.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
+    <Compile Include="Assets\Scripts\JumpNPickUp.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\Portal\CollNTele.cs" />
     <Compile Include="Assets\Scripts\Portal\PortalController.cs" />
     <Compile Include="Assets\Scripts\PortalCollector.cs" />
