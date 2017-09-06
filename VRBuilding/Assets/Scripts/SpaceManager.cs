@@ -209,6 +209,24 @@ public class SpaceManager : MonoBehaviour {
         //spaces[11].SetActive(true);
     }
 	
+    void ResetSpaces()
+    {
+        currentFace = 0;
+        for (int i = 1; i <= 6; ++i)
+        {
+            spaces[i].transform.rotation = rotations[i - 1];
+        }
+
+        for (int i = 14; i <= 19; ++i)
+        {
+            spaces[i].transform.rotation = rotations[i - 14];
+        }
+        for (int i = 1; i < 20; ++i)
+        {
+            spaces[i].SetActive(false);
+        }
+        //spaces[1].transform.rotation
+    }
 	// Update is called once per frame
 	void Update () {
 		

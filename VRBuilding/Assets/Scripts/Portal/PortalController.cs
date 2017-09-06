@@ -9,7 +9,9 @@ public class PortalController : MonoBehaviour {
     public GameObject renderQuad;
     public GameObject senderQuad;
     private bool isEnableFlag;
-    public float disThreshold;
+    float dThreshold;
+    float angleThreshold;
+    
 
     //private int toPortalNum;
     public int myPortalNum;
@@ -19,7 +21,8 @@ public class PortalController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         isEnableFlag = false;
-        disThreshold = 2.0f;
+        dThreshold = 2.0f;
+        angleThreshold = 150.0f;
         hmd = GameObject.Find("Camera (eye)").transform;
         hmdPos = hmd.position;
 
@@ -36,7 +39,7 @@ public class PortalController : MonoBehaviour {
 	void Update () {
         //Debug.Log("To portal number " + toPortalNum);
         hmdPos = hmd.position;	
-        if(isEnableFlag == false && (hmdPos - transform.position).magnitude < disThreshold)
+        if(isEnableFlag == false && (hmdPos - transform.position).magnitude < dThreshold /*IfEnable()*/)
         {
             renderQuad.SetActive(true);
             senderQuad.SetActive(true);
@@ -46,7 +49,7 @@ public class PortalController : MonoBehaviour {
             stereoRenderer.anchorTransform = toPortalAnchor;
             isEnableFlag = true;
         }
-        else if(isEnableFlag == true && (hmdPos - transform.position).magnitude > disThreshold){
+        else if(isEnableFlag == true && (hmdPos - transform.position).magnitude > dThreshold /*!IfEnable()*/){
             renderQuad.SetActive(false);
             senderQuad.SetActive(false);
             int toSpaceNum = spaceManager.GetSpaceNum(spaceManager.GetToPortalNum(myPortalNum));
@@ -54,4 +57,22 @@ public class PortalController : MonoBehaviour {
             isEnableFlag = false;
         }
 	}
+
+
+    /*bool IfEnable()
+    {
+        //if outside range
+        if((hmd.position- transform.position).magnitude > dThreshold)
+        {
+            return false;
+        }
+        Vector3 renderQuadForward = -renderQuad.transform.forward;
+        Vector3 renderQuadPosition = renderQuad.transform.position;
+        Vector3 playerToRenderQuadVec = hmd.position- renderQuadPosition;
+
+        float cosAngle = Vector3.Dot(playerToRenderQuadVec, renderQuadForward) / (playerToRenderQuadVec.magnitude * renderQuadForward.magnitude);
+        float cosCone = Mathf.Cos(angleThreshold * 3.1415f / 360);
+        return cosAngle >= cosCone;
+
+    }*/
 }

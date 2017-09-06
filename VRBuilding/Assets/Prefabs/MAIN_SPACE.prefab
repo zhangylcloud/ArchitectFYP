@@ -8276,24 +8276,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1256068463351848
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4651964905269268}
-  - component: {fileID: 33884220912715574}
-  - component: {fileID: 23002605121327774}
-  - component: {fileID: 64801509401526052}
-  m_Layer: 0
-  m_Name: Mesh390
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1256115051590914
 GameObject:
   m_ObjectHideFlags: 1
@@ -11486,6 +11468,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1355575743085748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4560525166724736}
+  m_Layer: 0
+  m_Name: Turning2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1356025620553706
 GameObject:
   m_ObjectHideFlags: 1
@@ -14163,6 +14160,21 @@ GameObject:
   - component: {fileID: 20772783001100684}
   m_Layer: 10
   m_Name: Stereo Camera Eye [RenderQuad]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1441258196574246
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4860952243582660}
+  m_Layer: 13
+  m_Name: Pivot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17488,6 +17500,21 @@ GameObject:
   - component: {fileID: 64074610847421838}
   m_Layer: 0
   m_Name: Mesh406
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1551757241218724
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4388742289869918}
+  m_Layer: 13
+  m_Name: Pivot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21764,6 +21791,24 @@ GameObject:
   - component: {fileID: 4338363065467430}
   m_Layer: 0
   m_Name: ___1_168
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1680615164003968
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4722495335537814}
+  - component: {fileID: 33086873530689096}
+  - component: {fileID: 23066541376615874}
+  - component: {fileID: 64834623593572500}
+  m_Layer: 13
+  m_Name: Turning2Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44232,6 +44277,19 @@ Transform:
   m_Father: {fileID: 4978797919108562}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4388742289869918
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551757241218724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.735, y: -6.6425, z: -11.822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4722495335537814}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4390168168782808
 Transform:
   m_ObjectHideFlags: 1
@@ -45198,8 +45256,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4651964905269268}
+  m_Children: []
   m_Father: {fileID: 4185618104685102}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48652,6 +48709,20 @@ Transform:
   m_Father: {fileID: 4099643485895318}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4560525166724736
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355575743085748}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.17, y: 11.503, z: 5.480011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4722495335537814}
+  m_Father: {fileID: 4976558741080056}
+  m_RootOrder: 276
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4560665970797170
 Transform:
   m_ObjectHideFlags: 1
@@ -51285,19 +51356,6 @@ Transform:
   m_Father: {fileID: 4978797919108562}
   m_RootOrder: 310
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4651964905269268
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256068463351848}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4427766686648850}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4651991940954620
 Transform:
   m_ObjectHideFlags: 1
@@ -53110,6 +53168,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4575589170296996}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4722495335537814
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680615164003968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.32, y: 7.71, z: 12.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4860952243582660}
+  - {fileID: 4388742289869918}
+  m_Father: {fileID: 4560525166724736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4722690219038740
@@ -56733,6 +56806,19 @@ Transform:
   m_Father: {fileID: 4978797919108562}
   m_RootOrder: 256
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4860952243582660
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441258196574246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.735, y: -6.6425, z: -12.822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4722495335537814}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4861008661563420
 Transform:
   m_ObjectHideFlags: 1
@@ -60098,8 +60184,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547326017723936}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.106102, y: 38.52788, z: -9.842337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4338537099417854}
@@ -60378,6 +60464,7 @@ Transform:
   - {fileID: 4973642220811326}
   - {fileID: 4175288573485564}
   - {fileID: 4949424263703704}
+  - {fileID: 4560525166724736}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -63161,39 +63248,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23002605121327774
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256068463351848}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1aa5c48640044784d9fd3fee91517773, type: 2}
-  - {fileID: 2100000, guid: 0aae44e8ee5ef0d4699288751486090c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23003201928120634
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -64714,6 +64768,39 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 1aa5c48640044784d9fd3fee91517773, type: 2}
+  - {fileID: 2100000, guid: 0aae44e8ee5ef0d4699288751486090c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23066541376615874
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680615164003968}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8b8be1ed4b77004429d512402b83e5c1, type: 2}
   - {fileID: 2100000, guid: 0aae44e8ee5ef0d4699288751486090c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -87850,6 +87937,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1602482161945750}
   m_Mesh: {fileID: 4300170, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
+--- !u!33 &33086873530689096
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680615164003968}
+  m_Mesh: {fileID: 4300858, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
 --- !u!33 &33088615654969732
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -91959,13 +92053,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798832389268610}
   m_Mesh: {fileID: 4300400, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
---- !u!33 &33884220912715574
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256068463351848}
-  m_Mesh: {fileID: 4300778, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
 --- !u!33 &33885075111590890
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -99085,20 +99172,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300352, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
---- !u!64 &64801509401526052
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256068463351848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300778, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
 --- !u!64 &64801511583368766
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -99435,6 +99508,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300982, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
+--- !u!64 &64834623593572500
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680615164003968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300858, guid: bf26d883d500fa4418ff46261c50345d, type: 3}
 --- !u!64 &64835033156798232
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -101313,7 +101400,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1420385076944664}
   senderQuad: {fileID: 1170521509756628}
-  disThreshold: 0
   myPortalNum: 7
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101399,7 +101485,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1657193611827928}
   senderQuad: {fileID: 1563627010014204}
-  disThreshold: 0
   myPortalNum: 17
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101441,7 +101526,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1365557814643206}
   senderQuad: {fileID: 1124819094933662}
-  disThreshold: 0
   myPortalNum: 26
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101459,7 +101543,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1376106554654980}
   senderQuad: {fileID: 1687949881935912}
-  disThreshold: 0
   myPortalNum: 33
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101477,7 +101560,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1088376805785932}
   senderQuad: {fileID: 1944684633702640}
-  disThreshold: 0
   myPortalNum: 6
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101570,7 +101652,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1271237618451294}
   senderQuad: {fileID: 1660001357467126}
-  disThreshold: 0
   myPortalNum: 20
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101684,7 +101765,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1799084824463490}
   senderQuad: {fileID: 1886281091986580}
-  disThreshold: 0
   myPortalNum: 14
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101702,7 +101782,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1229898067137530}
   senderQuad: {fileID: 1943992843618026}
-  disThreshold: 0
   myPortalNum: 11
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101744,7 +101823,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1150394460087882}
   senderQuad: {fileID: 1458214600428590}
-  disThreshold: 0
   myPortalNum: 19
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101892,7 +101970,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1743770964592224}
   senderQuad: {fileID: 1682598294802074}
-  disThreshold: 0
   myPortalNum: 34
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101910,7 +101987,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1735832126287180}
   senderQuad: {fileID: 1926942550047390}
-  disThreshold: 0
   myPortalNum: 32
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101945,7 +102021,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1181082301655232}
   senderQuad: {fileID: 1825621036495554}
-  disThreshold: 0
   myPortalNum: 30
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -101987,7 +102062,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1755256501804274}
   senderQuad: {fileID: 1783153423756646}
-  disThreshold: 0
   myPortalNum: 2
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102029,7 +102103,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1994986222752236}
   senderQuad: {fileID: 1574739434583550}
-  disThreshold: 0
   myPortalNum: 9
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102071,7 +102144,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1485299626708558}
   senderQuad: {fileID: 1758179222761348}
-  disThreshold: 0
   myPortalNum: 21
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102164,7 +102236,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1631747517872410}
   senderQuad: {fileID: 1303183477752922}
-  disThreshold: 0
   myPortalNum: 29
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102223,7 +102294,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1671116428798160}
   senderQuad: {fileID: 1094187860888440}
-  disThreshold: 0
   myPortalNum: 25
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102265,7 +102335,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1910602836004296}
   senderQuad: {fileID: 1712722167377422}
-  disThreshold: 0
   myPortalNum: 28
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102420,7 +102489,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1473084636305408}
   senderQuad: {fileID: 1673991536313618}
-  disThreshold: 0
   myPortalNum: 31
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102438,7 +102506,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1567674859444724}
   senderQuad: {fileID: 1784653987945000}
-  disThreshold: 0
   myPortalNum: 5
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102456,7 +102523,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1479985470770904}
   senderQuad: {fileID: 1370005111800630}
-  disThreshold: 0
   myPortalNum: 35
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102539,7 +102605,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1060510288382104}
   senderQuad: {fileID: 1062095220723172}
-  disThreshold: 0
   myPortalNum: 38
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102714,7 +102779,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1226268510319972}
   senderQuad: {fileID: 1798152264925188}
-  disThreshold: 0
   myPortalNum: 15
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102756,7 +102820,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1275657213300874}
   senderQuad: {fileID: 1885039153983284}
-  disThreshold: 0
   myPortalNum: 4
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102798,7 +102861,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1961063865371868}
   senderQuad: {fileID: 1526240364826834}
-  disThreshold: 0
   myPortalNum: 61
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -102908,7 +102970,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1561779432459790}
   senderQuad: {fileID: 1822818319634686}
-  disThreshold: 0
   myPortalNum: 23
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103039,7 +103100,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1574413147337668}
   senderQuad: {fileID: 1870010883632606}
-  disThreshold: 0
   myPortalNum: 3
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103098,7 +103158,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1964244934677116}
   senderQuad: {fileID: 1484603089926256}
-  disThreshold: 0
   myPortalNum: 36
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103133,7 +103192,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1762028333981406}
   senderQuad: {fileID: 1508237552214910}
-  disThreshold: 0
   myPortalNum: 40
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103216,7 +103274,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1924648741594380}
   senderQuad: {fileID: 1674259100228882}
-  disThreshold: 0
   myPortalNum: 39
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103234,7 +103291,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1524588514657666}
   senderQuad: {fileID: 1708661974471098}
-  disThreshold: 0
   myPortalNum: 12
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103344,7 +103400,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1578380035068310}
   senderQuad: {fileID: 1083739374875916}
-  disThreshold: 0
   myPortalNum: 24
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103379,7 +103434,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1968637739167976}
   senderQuad: {fileID: 1340725653893942}
-  disThreshold: 0
   myPortalNum: 18
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103397,7 +103451,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1281763356740932}
   senderQuad: {fileID: 1898727949842576}
-  disThreshold: 0
   myPortalNum: 16
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103514,7 +103567,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1291753626010470}
   senderQuad: {fileID: 1417095543764534}
-  disThreshold: 0
   myPortalNum: 1
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103532,7 +103584,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1090997824837054}
   senderQuad: {fileID: 1635594769128892}
-  disThreshold: 0
   myPortalNum: 22
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103653,7 +103704,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1449047728188364}
   senderQuad: {fileID: 1980223715007466}
-  disThreshold: 0
   myPortalNum: 10
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103671,7 +103721,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1923674823977336}
   senderQuad: {fileID: 1726169636071404}
-  disThreshold: 0
   myPortalNum: 27
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103713,7 +103762,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1688845331052962}
   senderQuad: {fileID: 1876133505097042}
-  disThreshold: 0
   myPortalNum: 37
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103731,7 +103779,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1679372373727696}
   senderQuad: {fileID: 1705013506108206}
-  disThreshold: 0
   myPortalNum: 8
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}
@@ -103766,7 +103813,6 @@ MonoBehaviour:
   hmd: {fileID: 0}
   renderQuad: {fileID: 1939868253290134}
   senderQuad: {fileID: 1190550272796830}
-  disThreshold: 0
   myPortalNum: 13
   spaceManager: {fileID: 0}
   stereoRenderer: {fileID: 0}

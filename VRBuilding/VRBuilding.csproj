@@ -161,6 +161,7 @@
     <Compile Include="Assets\Scripts\DialogueControl.cs" />
     <Compile Include="Assets\Scripts\DirPrinter.cs" />
     <Compile Include="Assets\Scripts\DungeonManager.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GiveDialogue.cs" />
     <Compile Include="Assets\Scripts\GrassFlowerShifter.cs" />
     <Compile Include="Assets\Scripts\GravityChange.cs" />
