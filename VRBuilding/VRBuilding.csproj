@@ -90,6 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bezier.cs" />
+    <Compile Include="Assets\BezierControlPointMode.cs" />
+    <Compile Include="Assets\BezierCurve.cs" />
+    <Compile Include="Assets\BezierSpline.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\RotateAxis.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\RotateInMovementDir.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\SimpleMover.cs" />
@@ -112,6 +116,7 @@
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\DeviceType.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderer.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\StereoRendering\Scripts\StereoRenderManager.cs" />
+    <Compile Include="Assets\Line.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\- Scripts\AnimationControl.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\- Scripts\PanelControll.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\- Scripts\PeriodicShake.cs" />
@@ -167,10 +172,15 @@
     <Compile Include="Assets\Scripts\Portal\CollNTele.cs" />
     <Compile Include="Assets\Scripts\Portal\PortalController.cs" />
     <Compile Include="Assets\Scripts\PortalCollector.cs" />
+    <Compile Include="Assets\Scripts\RollerCoasterController.cs" />
+    <Compile Include="Assets\Scripts\RollerCoasterTrigger.cs" />
     <Compile Include="Assets\Scripts\SpaceManager.cs" />
     <Compile Include="Assets\Scripts\StairNum.cs" />
     <Compile Include="Assets\Scripts\TriggerArrange.cs" />
     <Compile Include="Assets\Scripts\WaterChange.cs" />
+    <Compile Include="Assets\SplineDecorator.cs" />
+    <Compile Include="Assets\SplineWalker.cs" />
+    <Compile Include="Assets\SplineWalkerMode.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />

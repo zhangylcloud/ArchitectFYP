@@ -206,6 +206,7 @@ public class SpaceManager : MonoBehaviour {
         {
             spaces[i].SetActive(false);
         }
+        spaces[11].SetActive(true);
     }
 	
 	// Update is called once per frame
