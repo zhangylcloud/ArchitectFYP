@@ -151,11 +151,13 @@
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Scripts\BottleShifter.cs" />
     <Compile Include="Assets\Scripts\CharCtrlFollow.cs" />
     <Compile Include="Assets\Scripts\DialogueControl.cs" />
     <Compile Include="Assets\Scripts\DirPrinter.cs" />
     <Compile Include="Assets\Scripts\DungeonManager.cs" />
     <Compile Include="Assets\Scripts\GiveDialogue.cs" />
+    <Compile Include="Assets\Scripts\GrassFlowerShifter.cs" />
     <Compile Include="Assets\Scripts\GravityChange.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\JumpNPickUp.cs" />
@@ -292,6 +294,7 @@
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader_5_3.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\readme.txt" />
+    <None Include="Assets\Hand painted bottle\readme.txt" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />

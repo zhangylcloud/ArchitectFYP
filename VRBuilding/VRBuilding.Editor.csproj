@@ -182,6 +182,7 @@
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\Shader\StereoRenderShader_5_3.shader" />
     <None Include="Assets\HTC.UnityPlugin\StereoRendering\readme.txt" />
+    <None Include="Assets\Hand painted bottle\readme.txt" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
