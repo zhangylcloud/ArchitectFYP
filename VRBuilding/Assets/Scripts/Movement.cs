@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class Movement : MonoBehaviour
 {
-
+    public GameController gameController;
     public const float speedSet = 3;
     
 
@@ -42,6 +42,7 @@ public class Movement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        gameController = GameObject.Find("GameManager").GetComponent<GameController>();
         spaceManager = GameObject.Find("SpaceManager").GetComponent<SpaceManager>();
         totalRotatedAngle = 0;
         //gravitySpeed = 0;
@@ -63,6 +64,13 @@ public class Movement : MonoBehaviour
         
 
         SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
+
+        //Reset Game Controll;
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.ButtonB))
+        {
+            gameController.ResetGame();
+        }
+
         Vector2 moveVec = device.GetAxis();
         Vector3 moveVec3D = new Vector3(speed * moveVec.x, 0, speed * moveVec.y);
         moveVec3D = Vector3.ClampMagnitude(moveVec3D, speed);

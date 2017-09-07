@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SteamVR_TrackedObject))]
 public class GameController : MonoBehaviour
 {
 
-    SteamVR_TrackedObject trackedObj;
     public GameObject player;
     public SpaceManager spaceManager;
+    public Transform resetAnchorTrans;
     //public Movement movement;
-    private void Awake()
-    {
-        trackedObj = GetComponent<SteamVR_TrackedObject>();
-    }
+    
     // Use this for initialization
     void Start()
     {
@@ -21,17 +17,19 @@ public class GameController : MonoBehaviour
         spaceManager = GameObject.Find("SpaceManager").GetComponent<SpaceManager>();
     }
     // Update is called once per frame
-    void FixedUpdate()
+    
+    public void ResetGame()
     {
-        SteamVR_Controller.Device device = SteamVR_Controller.Input((int)trackedObj.index);
-        if (device.GetPress(SteamVR_Controller.ButtonMask.ButtonB))
-        {
-            ResetGame();
-        }
-        //Debug.Log("isButtonPressed" + isButtonPressed);
-    }
-    void ResetGame()
-    {
-        
+        GameObject prevSpace = spaceManager.spaces[spaceManager.GetCurrentFace()];
+        int prevFaceNum = spaceManager.GetCurrentFace();
+        spaceManager.spaces[3].SetActive(true);
+        resetAnchorTrans = spaceManager.spaces[3].transform.Find("MainSpaceAnchor").transform;
+        player.transform.position = resetAnchorTrans.position;
+        player.transform.rotation = Quaternion.identity;
+        int toSpaceNum = 3;//Set to the left surface;
+        spaceManager.RearrangeFace(prevFaceNum, toSpaceNum);
+        spaceManager.SetCurrentFace(toSpaceNum < 7 ? 0 : toSpaceNum);
+        prevSpace.SetActive(false);
+
     }
 }
