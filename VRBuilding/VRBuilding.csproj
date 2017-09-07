@@ -94,6 +94,10 @@
     <Compile Include="Assets\BezierControlPointMode.cs" />
     <Compile Include="Assets\BezierCurve.cs" />
     <Compile Include="Assets\BezierSpline.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\RotateAxis.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\RotateInMovementDir.cs" />
     <Compile Include="Assets\Grass_Shader\DirectX 11 Grass Shader\Example\SimpleMover.cs" />

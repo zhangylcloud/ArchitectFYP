@@ -16,6 +16,8 @@ public class SpaceManager : MonoBehaviour {
     public GameObject player;
     public int currentFace;
 
+    public Material[] skyboxes = new Material[6];
+
 	// Use this for initialization
 	void Start () {
         currentFace = 0;//initially, player at face 0 (temp face)
@@ -229,7 +231,38 @@ public class SpaceManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		
+		if(currentFace <= 6 && RenderSettings.skybox != skyboxes[1])
+        {
+            RenderSettings.skybox = skyboxes[2];
+        }
+        else if(currentFace == 7 && RenderSettings.skybox != skyboxes[0])
+        {
+            RenderSettings.skybox = skyboxes[0];
+        }
+        else if(currentFace == 9 && RenderSettings.skybox != skyboxes[2])
+        {
+            RenderSettings.skybox = skyboxes[2];
+        }
+        else if(currentFace == 10 && RenderSettings.skybox != skyboxes[3])
+        {
+            RenderSettings.skybox = skyboxes[3];
+        }
+        else if(currentFace == 11 && RenderSettings.skybox != skyboxes[4])
+        {
+            RenderSettings.skybox = skyboxes[4];
+        }
+        else if(currentFace == 12 && RenderSettings.skybox != skyboxes[5])
+        {
+            RenderSettings.skybox = skyboxes[5];
+        }
+        else if(currentFace == 13 && RenderSettings.skybox != skyboxes[3])
+        {
+            RenderSettings.skybox = skyboxes[3];
+        }
+        else if(currentFace >= 14 && currentFace <= 19 && RenderSettings.skybox != skyboxes[1])
+        {
+            RenderSettings.skybox = skyboxes[1];
+        }
 	}
     //Find the to portal number given this portal number
     public int GetToPortalNum(int myPortalNum)
