@@ -80,20 +80,7 @@ public class Movement : MonoBehaviour
             }
             gameController.ResetGame();
         }
-        if (device.GetPressDown(SteamVR_Controller.ButtonMask.ButtonC))
-        {
-            if (tmpPlayer.GetComponent<SplineWalker>().enabled)
-            {
-                tmpPlayer.GetComponent<SplineWalker>().enabled = false;
-                Transform player = tmpPlayer.transform.Find("[CameraRig]");
-                if (player != null)
-                {
-                    player.SetParent(null);
-                }
-            }
-            
-            gameController.JumpLevel();
-        }
+        
 
         Vector2 moveVec = device.GetAxis();
         Vector3 moveVec3D = new Vector3(speed * moveVec.x, 0, speed * moveVec.y);

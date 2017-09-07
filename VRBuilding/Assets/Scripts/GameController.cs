@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         player = GameObject.Find("[CameraRig]");
         spaceManager = GameObject.Find("SpaceManager").GetComponent<SpaceManager>();
         currentJumpIndex = 0;
-        levelArray[0] = 7;
+        /*levelArray[0] = 7;
         levelArray[1] = 8;
         levelArray[2] = 9;
         levelArray[3] = 10;
@@ -26,6 +26,15 @@ public class GameController : MonoBehaviour
         levelArray[5] = 12;
         levelArray[6] = 13;
         levelArray[7] = 14;
+        levelArray[8] = 3;*/
+        levelArray[0] = 7;
+        levelArray[1] = 10;
+        levelArray[2] = 11;
+        levelArray[3] = 9;
+        levelArray[4] = 14;
+        levelArray[5] = 12;
+        levelArray[6] = 13;
+        levelArray[7] = 8;
         levelArray[8] = 3;
     }
     // Update is called once per frame
