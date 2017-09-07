@@ -9,7 +9,7 @@ public class GravityChange : MonoBehaviour {
     private bool isInAreaFlag;
 	// Use this for initialization
 	void Start () {
-        distanceAffected = 100;
+        distanceAffected = 60;
         playerController = GameObject.Find("[CameraRig]");
         jumpController = playerController.transform.Find("Controller (right)").GetComponent<Jump>();
         isInAreaFlag = false;

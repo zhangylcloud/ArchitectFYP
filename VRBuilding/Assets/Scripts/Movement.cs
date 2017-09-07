@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
 {
     public GameController gameController;
     public const float speedSet = 3;
-    
 
+    public GameObject tmpPlayer;
 
     public Jump jumpController;
     private float upSpeed;
@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour
         isTransition = false;
 
         upSpeed = 0;
+        tmpPlayer = GameObject.Find("TmpPlayer");
     }
 
     public float GetSpeedSet()
@@ -68,7 +69,30 @@ public class Movement : MonoBehaviour
         //Reset Game Controll;
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.ButtonB))
         {
+            if (tmpPlayer.GetComponent<SplineWalker>().enabled)
+            {
+                tmpPlayer.GetComponent<SplineWalker>().enabled = false;
+                Transform player = tmpPlayer.transform.Find("[CameraRig]");
+                if (player != null)
+                {
+                    player.SetParent(null);
+                }
+            }
             gameController.ResetGame();
+        }
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.ButtonC))
+        {
+            if (tmpPlayer.GetComponent<SplineWalker>().enabled)
+            {
+                tmpPlayer.GetComponent<SplineWalker>().enabled = false;
+                Transform player = tmpPlayer.transform.Find("[CameraRig]");
+                if (player != null)
+                {
+                    player.SetParent(null);
+                }
+            }
+            
+            gameController.JumpLevel();
         }
 
         Vector2 moveVec = device.GetAxis();

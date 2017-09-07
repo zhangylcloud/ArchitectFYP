@@ -18,6 +18,8 @@ public class SpaceManager : MonoBehaviour {
 
     public Material[] skyboxes = new Material[6];
 
+    //public GameObject tmpPlayer;//for rollercoaster
+
 	// Use this for initialization
 	void Start () {
         currentFace = 0;//initially, player at face 0 (temp face)
@@ -209,6 +211,7 @@ public class SpaceManager : MonoBehaviour {
             spaces[i].SetActive(false);
         }
         //spaces[11].SetActive(true);
+
     }
 	
     void ResetSpaces()
@@ -231,6 +234,7 @@ public class SpaceManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        
 		if(currentFace <= 6 && RenderSettings.skybox != skyboxes[1])
         {
             RenderSettings.skybox = skyboxes[2];
